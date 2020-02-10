@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Simple Website</title>
+</head>
+
+<body style="background-color: #ff4c4c; font-size: 20px; font-family: consolas";>
+<h1 style="text-align: center; font-size: 45px; font-family: verdana";> Joe's Hotdog Stand </h1>
+<script language="javascript">
+	var hotdogs, fries, soda, totalItems, totalCost, subtotal, discount = 0, tax;
+	hotdogs = prompt("How many hotdogs do you want?");
+	fries   = prompt("How many fries do you want?");
+	soda    = prompt("How many sodas do you want?");
+	totalItems = 1.0*hotdogs + 1.0*fries + 1.0*soda;
+	totalCost   = 3.25*hotdogs + 2.00*fries + 1.50*soda;
+	subtotal = totalCost.toFixed(2);
+	if(totalCost >= 20) {
+		discount = totalCost;
+		totalCost = totalCost * 0.90;
+		discount = discount - totalCost;
+		discount = discount.toFixed(2);
+	}
+	tax = totalCost;
+	totalCost = totalCost * 1.0625;
+	tax = totalCost - tax;
+	tax = tax.toFixed(2);
+	totalCost = totalCost.toFixed(2);
+	document.write("Hotdogs ordered: " + hotdogs);
+	document.write("<br>");
+	document.write("Fries ordered: " + fries);
+	document.write("<br>");
+	document.write("Sodas ordered: " + soda);
+	document.write("<br>");
+	document.write("Total items ordered: " + totalItems + " total items");
+	document.write("<br>");
+	document.write("Subtotal: $" + subtotal);
+	document.write("<br>");
+	document.write("Discount (0 if not applicable): $" + discount);
+	document.write("<br>");
+	document.write("Tax (6.25%): $" + tax);
+	document.write("<br>");
+	document.write("Total: $" + totalCost);
+</script>
+<p>
+	<img src="hotdogstand.jpg" width="250" alt="Hot Dog Stand" hspace="15" />
+</p>
+</body>
+
+</html>
