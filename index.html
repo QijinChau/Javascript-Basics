@@ -9,10 +9,20 @@
 <h1 style="text-align: center; font-size: 45px; font-family: verdana";> Joe's Hotdog Stand </h1>
 <script language="javascript">
 	var hotdogs, fries, soda, totalItems, totalCost, subtotal, discount = 0, tax;
-	hotdogs = prompt("How many hotdogs do you want?");
-	fries   = prompt("How many fries do you want?");
-	soda    = prompt("How many sodas do you want?");
-	totalItems = 1.0*hotdogs + 1.0*fries + 1.0*soda;
+	while(isNaN(hotdogs)) {
+		hotdogs = prompt("How many hotdogs do you want?");
+	}
+	hotdogs = parseInt(hotdogs);
+	while(isNaN(fries)) {
+		fries   = prompt("How many fries do you want?");
+	}
+	fries = parseInt(fries);
+	while(isNaN(soda)) {
+		soda    = prompt("How many sodas do you want?");
+	}
+	soda = parseInt(soda);
+	
+	totalItems = hotdogs + fries + soda;
 	totalCost   = 3.25*hotdogs + 2.00*fries + 1.50*soda;
 	subtotal = totalCost.toFixed(2);
 	if(totalCost >= 20) {
